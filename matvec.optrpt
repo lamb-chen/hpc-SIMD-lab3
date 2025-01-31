@@ -1,0 +1,236 @@
+Global optimization report for : dgemv
+
+LOOP BEGIN at matvec.c (22, 3)
+    remark #15553: loop was not vectorized: outer loop is not an auto-vectorization candidate.
+
+    LOOP BEGIN at matvec.c (23, 5)
+        remark #15300: LOOP WAS VECTORIZED
+        remark #15305: vectorization support: vector length 4
+        remark #15475: --- begin vector loop cost summary ---
+        remark #15476: scalar cost: 8.000000 
+        remark #15477: vector cost: 2.750000 
+        remark #15478: estimated potential speedup: 2.843750 
+        remark #15309: vectorization support: normalized vectorization overhead 0.718750
+        remark #15488: --- end vector loop cost summary ---
+        remark #15447: --- begin vector loop memory reference summary ---
+        remark #15448: unmasked aligned unit stride loads: 2 
+        remark #15449: unmasked aligned unit stride stores: 1 
+        remark #15474: --- end vector loop memory reference summary ---
+    LOOP END
+
+    LOOP BEGIN at matvec.c (23, 5)
+    <Remainder loop for vectorization>
+    LOOP END
+LOOP END
+=================================================================
+
+Global optimization report for : main
+
+LOOP BEGIN at matvec.c (72, 3)
+    remark #15300: LOOP WAS VECTORIZED
+    remark #15305: vectorization support: vector length 4
+    remark #15475: --- begin vector loop cost summary ---
+    remark #15476: scalar cost: 5.000000 
+    remark #15477: vector cost: 2.250000 
+    remark #15478: estimated potential speedup: 2.171875 
+    remark #15309: vectorization support: normalized vectorization overhead 0.875000
+    remark #15488: --- end vector loop cost summary ---
+    remark #15447: --- begin vector loop memory reference summary ---
+    remark #15449: unmasked aligned unit stride stores: 1 
+    remark #15474: --- end vector loop memory reference summary ---
+LOOP END
+
+LOOP BEGIN at matvec.c (72, 3)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at matvec.c (85, 5)
+    remark #25567: 2 loops have been collapsed
+    remark #15300: LOOP WAS VECTORIZED
+    remark #15305: vectorization support: vector length 4
+    remark #15475: --- begin vector loop cost summary ---
+    remark #15476: scalar cost: 3.000000 
+    remark #15477: vector cost: 1.500000 
+    remark #15478: estimated potential speedup: 1.953125 
+    remark #15309: vectorization support: normalized vectorization overhead 1.328125
+    remark #15488: --- end vector loop cost summary ---
+    remark #15447: --- begin vector loop memory reference summary ---
+    remark #15449: unmasked aligned unit stride stores: 1 
+    remark #15474: --- end vector loop memory reference summary ---
+LOOP END
+
+LOOP BEGIN at matvec.c (85, 5)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at matvec.c (22, 3)
+    remark #15553: loop was not vectorized: outer loop is not an auto-vectorization candidate.
+
+    LOOP BEGIN at matvec.c (23, 5)
+        remark #15300: LOOP WAS VECTORIZED
+        remark #15305: vectorization support: vector length 4
+        remark #15475: --- begin vector loop cost summary ---
+        remark #15476: scalar cost: 8.000000 
+        remark #15477: vector cost: 2.750000 
+        remark #15478: estimated potential speedup: 2.843750 
+        remark #15309: vectorization support: normalized vectorization overhead 0.718750
+        remark #15488: --- end vector loop cost summary ---
+        remark #15447: --- begin vector loop memory reference summary ---
+        remark #15448: unmasked aligned unit stride loads: 2 
+        remark #15449: unmasked aligned unit stride stores: 1 
+        remark #15474: --- end vector loop memory reference summary ---
+    LOOP END
+
+    LOOP BEGIN at matvec.c (23, 5)
+    <Remainder loop for vectorization>
+    LOOP END
+LOOP END
+
+LOOP BEGIN at matvec.c (93, 3)
+    remark #15522: loop was not vectorized: loop control flow is too complex. Try using canonical loop form from OpenMP specification 5.0
+    remark #25439: Loop unrolled with remainder by 2
+LOOP END
+=================================================================
+
+Global optimization report for : init_vec
+
+LOOP BEGIN at matvec.c (72, 3)
+    remark #15300: LOOP WAS VECTORIZED
+    remark #15305: vectorization support: vector length 4
+    remark #15475: --- begin vector loop cost summary ---
+    remark #15476: scalar cost: 5.000000 
+    remark #15477: vector cost: 2.343750 
+    remark #15478: estimated potential speedup: 2.078125 
+    remark #15309: vectorization support: normalized vectorization overhead 0.843750
+    remark #15488: --- end vector loop cost summary ---
+    remark #15447: --- begin vector loop memory reference summary ---
+    remark #15451: unmasked unaligned unit stride stores: 1 
+    remark #15474: --- end vector loop memory reference summary ---
+LOOP END
+
+LOOP BEGIN at matvec.c (72, 3)
+<Remainder loop for vectorization>
+LOOP END
+=================================================================
+
+Global optimization report for : zero_vec
+=================================================================
+
+Global optimization report for : init_mat
+
+LOOP BEGIN at matvec.c (85, 5)
+    remark #25567: 2 loops have been collapsed
+    remark #15300: LOOP WAS VECTORIZED
+    remark #15305: vectorization support: vector length 4
+    remark #15475: --- begin vector loop cost summary ---
+    remark #15476: scalar cost: 3.000000 
+    remark #15477: vector cost: 1.593750 
+    remark #15478: estimated potential speedup: 1.843750 
+    remark #15309: vectorization support: normalized vectorization overhead 1.250000
+    remark #15488: --- end vector loop cost summary ---
+    remark #15447: --- begin vector loop memory reference summary ---
+    remark #15451: unmasked unaligned unit stride stores: 1 
+    remark #15474: --- end vector loop memory reference summary ---
+LOOP END
+
+LOOP BEGIN at matvec.c (85, 5)
+<Remainder loop for vectorization>
+LOOP END
+=================================================================
+
+Global optimization report for : check
+
+LOOP BEGIN at matvec.c (93, 3)
+    remark #15522: loop was not vectorized: loop control flow is too complex. Try using canonical loop form from OpenMP specification 5.0
+    remark #25439: Loop unrolled with remainder by 2
+LOOP END
+=================================================================
+
+---- Begin Inlining Report ----
+Option Values:
+  inline-threshold: 225
+  inlinehint-threshold: 325
+  inlinecold-threshold: 45
+  inlineoptsize-threshold: 15
+
+DEAD STATIC FUNC: atoi
+
+DEAD STATIC FUNC: llvm.ssa.copy.i64
+
+COMPILE FUNC: dgemv
+   -> DELETE: llvm.ssa.copy.i64 matvec.c
+   -> DELETE: llvm.ssa.copy.i64 matvec.c (23,28)
+   -> DELETE: llvm.ssa.copy.i64 matvec.c (22,26)
+
+COMPILE FUNC: init_vec
+   -> DELETE: llvm.ssa.copy.i64 matvec.c (72,26)
+
+COMPILE FUNC: zero_vec
+   -> llvm.memset.p0.i64 matvec.c (79,10)
+
+COMPILE FUNC: init_mat
+   -> DELETE: llvm.ssa.copy.i64 matvec.c
+   -> DELETE: llvm.ssa.copy.i64 matvec.c (85,28)
+   -> DELETE: llvm.ssa.copy.i64 matvec.c (84,26)
+
+COMPILE FUNC: check
+   -> DELETE: llvm.fabs.f64 matvec.c (94,9)
+   -> EXTERN: printf matvec.c (95,6)
+   -> llvm.fabs.f64 matvec.c (94,9)
+   -> llvm.fabs.f64 matvec.c (94,9)
+   -> llvm.fabs.f64 matvec.c (94,9)
+   -> DELETE: llvm.ssa.copy.i64 matvec.c
+   -> DELETE: llvm.ssa.copy.i64 matvec.c (93,26)
+
+COMPILE FUNC: main
+   -> INLINE: atoi matvec.c (36,9) (10<=487)
+      -> EXTERN: strtol matvec.c (363,16)
+   -> INLINE: atoi matvec.c (40,9) (10<=487)
+      -> EXTERN: strtol matvec.c (363,16)
+   -> INLINE: atoi matvec.c (41,9) (10<=487)
+      -> EXTERN: strtol matvec.c (363,16)
+   -> EXTERN: printf matvec.c (43,3)
+   -> EXTERN: aligned_alloc matvec.c (45,16)
+   -> EXTERN: aligned_alloc matvec.c (46,16)
+   -> EXTERN: aligned_alloc matvec.c (47,16)
+   -> INLINE: init_vec matvec.c (50,3) (-10<=250)
+   -> INLINE: zero_vec matvec.c (51,3) (-20<=250)
+   -> INLINE: init_mat matvec.c (52,3) (5<=250)
+   -> EXTERN: omp_get_wtime matvec.c (54,16)
+   -> INLINE: dgemv matvec.c (55,3) (20<=250)
+   -> EXTERN: omp_get_wtime matvec.c (56,16)
+   -> INLINE: check matvec.c (58,17) (70<=250)
+      -> DELETE: llvm.fabs.f64 matvec.c (94,9)
+      -> EXTERN: printf matvec.c (95,6)
+      -> llvm.fabs.f64 matvec.c (94,9)
+      -> llvm.fabs.f64 matvec.c (94,9)
+      -> llvm.fabs.f64 matvec.c (94,9)
+   -> DELETE: puts matvec.c (59,17)
+   -> EXTERN: puts matvec.c (60,8)
+   -> EXTERN: printf matvec.c (62,3)
+   -> EXTERN: free matvec.c (64,3)
+   -> EXTERN: free matvec.c (65,3)
+   -> EXTERN: free matvec.c (66,3)
+   -> llvm.experimental.noalias.scope.decl matvec.c (55,3)
+   -> llvm.experimental.noalias.scope.decl matvec.c (55,3)
+   -> llvm.experimental.noalias.scope.decl matvec.c (55,3)
+   -> EXTERN: omp_get_wtime matvec.c (54,16)
+   -> DELETE: llvm.experimental.noalias.scope.decl matvec.c (55,3)
+   -> DELETE: llvm.experimental.noalias.scope.decl matvec.c (55,3)
+   -> DELETE: llvm.experimental.noalias.scope.decl matvec.c (55,3)
+   -> DELETE: omp_get_wtime matvec.c (54,16)
+   -> DELETE: llvm.experimental.noalias.scope.decl matvec.c (55,3)
+   -> DELETE: llvm.experimental.noalias.scope.decl matvec.c (55,3)
+   -> DELETE: llvm.experimental.noalias.scope.decl matvec.c (55,3)
+   -> DELETE: llvm.ssa.copy.i64 matvec.c (72,26)
+   -> DELETE: llvm.ssa.copy.i64 matvec.c
+   -> DELETE: llvm.ssa.copy.i64 matvec.c (85,28)
+   -> DELETE: llvm.ssa.copy.i64 matvec.c (84,26)
+   -> DELETE: llvm.ssa.copy.i64 matvec.c
+   -> DELETE: llvm.ssa.copy.i64 matvec.c (23,28)
+   -> DELETE: llvm.ssa.copy.i64 matvec.c (22,26)
+   -> DELETE: llvm.ssa.copy.i64 matvec.c
+   -> DELETE: llvm.ssa.copy.i64 matvec.c (93,26)
+   -> llvm.memset.p0.i64 matvec.c (79,10)
+
+---- End Inlining Report ------

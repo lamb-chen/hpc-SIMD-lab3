@@ -1,0 +1,127 @@
+Global optimization report for : daxpy
+
+LOOP BEGIN at daxpy.c (10, 3)
+<Multiversioned v2>
+LOOP END
+
+LOOP BEGIN at daxpy.c (10, 3)
+<Multiversioned v1>
+    remark #25228: Loop multiversioned for Data Dependence
+    remark #25439: Loop unrolled with remainder by 8
+LOOP END
+
+LOOP BEGIN at daxpy.c (10, 3)
+<Remainder loop>
+    remark #25585: Loop converted to switch
+LOOP END
+=================================================================
+
+Global optimization report for : main
+
+LOOP BEGIN at daxpy.c (55, 3)
+    remark #25439: Loop unrolled with remainder by 8
+LOOP END
+
+LOOP BEGIN at daxpy.c (55, 3)
+<Remainder loop>
+    remark #25585: Loop converted to switch
+LOOP END
+
+LOOP BEGIN at daxpy.c (37, 3)
+
+    LOOP BEGIN at daxpy.c (10, 3)
+        remark #25439: Loop unrolled with remainder by 8
+    LOOP END
+
+    LOOP BEGIN at daxpy.c (10, 3)
+    <Remainder loop>
+        remark #25585: Loop converted to switch
+    LOOP END
+LOOP END
+
+LOOP BEGIN at daxpy.c (61, 3)
+    remark #25439: Loop unrolled with remainder by 2
+LOOP END
+=================================================================
+
+Global optimization report for : init
+
+LOOP BEGIN at daxpy.c (55, 3)
+    remark #25439: Loop unrolled with remainder by 8
+LOOP END
+
+LOOP BEGIN at daxpy.c (55, 3)
+<Remainder loop>
+    remark #25585: Loop converted to switch
+LOOP END
+=================================================================
+
+Global optimization report for : check
+
+LOOP BEGIN at daxpy.c (61, 3)
+    remark #25439: Loop unrolled with remainder by 2
+LOOP END
+=================================================================
+
+---- Begin Inlining Report ----
+Option Values:
+  inline-threshold: 225
+  inlinehint-threshold: 325
+  inlinecold-threshold: 45
+  inlineoptsize-threshold: 15
+
+DEAD STATIC FUNC: atoi
+
+DEAD STATIC FUNC: llvm.ssa.copy.i32
+
+DEAD STATIC FUNC: llvm.ssa.copy.i64
+
+COMPILE FUNC: daxpy
+   -> DELETE: llvm.ssa.copy.i64 daxpy.c (10,26)
+
+COMPILE FUNC: init
+   -> DELETE: llvm.ssa.copy.i64 daxpy.c (55,26)
+
+COMPILE FUNC: check
+   -> DELETE: llvm.fabs.f64 daxpy.c (62,9)
+   -> llvm.fabs.f64 daxpy.c (62,9)
+   -> llvm.fabs.f64 daxpy.c (62,9)
+   -> llvm.fabs.f64 daxpy.c (62,9)
+   -> DELETE: llvm.ssa.copy.i64 daxpy.c (61,26)
+
+COMPILE FUNC: main
+   -> INLINE: atoi daxpy.c (21,9) (10<=487)
+      -> EXTERN: strtol daxpy.c (363,16)
+   -> INLINE: atoi daxpy.c (24,9) (10<=487)
+      -> EXTERN: strtol daxpy.c (363,16)
+   -> INLINE: atoi daxpy.c (25,14) (10<=487)
+      -> EXTERN: strtol daxpy.c (363,16)
+   -> EXTERN: printf daxpy.c (27,3)
+   -> EXTERN: malloc daxpy.c (29,16)
+   -> EXTERN: malloc daxpy.c (30,16)
+   -> INLINE: init daxpy.c (33,3) (-25<=250)
+   -> INLINE: init daxpy.c (34,3) (-25<=250)
+   -> EXTERN: omp_get_wtime daxpy.c (36,16)
+   -> EXTERN: omp_get_wtime daxpy.c (40,16)
+   -> INLINE: check daxpy.c (42,17) (-5<=250)
+      -> DELETE: llvm.fabs.f64 daxpy.c (62,9)
+      -> llvm.fabs.f64 daxpy.c (62,9)
+      -> llvm.fabs.f64 daxpy.c (62,9)
+      -> llvm.fabs.f64 daxpy.c (62,9)
+   -> INLINE: daxpy daxpy.c (38,5) (-10<=250)
+   -> DELETE: puts daxpy.c (43,17)
+   -> EXTERN: puts daxpy.c (44,8)
+   -> EXTERN: printf daxpy.c (46,3)
+   -> EXTERN: free daxpy.c (48,3)
+   -> EXTERN: free daxpy.c (49,3)
+   -> EXTERN: omp_get_wtime daxpy.c (36,16)
+   -> EXTERN: omp_get_wtime daxpy.c (40,16)
+   -> EXTERN: omp_get_wtime daxpy.c (40,16)
+   -> DELETE: llvm.ssa.copy.i64 daxpy.c (55,26)
+   -> DELETE: llvm.ssa.copy.i64 daxpy.c
+   -> DELETE: llvm.ssa.copy.i64 daxpy.c (10,26)
+   -> DELETE: llvm.ssa.copy.i32 daxpy.c (37,31)
+   -> DELETE: llvm.ssa.copy.i64 daxpy.c (61,26)
+   -> llvm.memset.p0.i64 daxpy.c (56,10)
+
+---- End Inlining Report ------

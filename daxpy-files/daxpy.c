@@ -6,7 +6,7 @@
 void init(double *x, int N, double val);
 int check(double *y, int N, double r);
 
-void daxpy(int N, double a, double const *x, double *y) {
+void daxpy(int N, double a, double const * restrict x, double * restrict y) {
   for (int i = 0; i < N; ++i)
   y[i] += a * x[i];
 }
